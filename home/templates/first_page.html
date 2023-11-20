@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <title>First Page</title>
+  </head>
+  <body>
+    <div class="container" style="padding-top: 10px;">
+        <div>
+        <a href="{% url 'post_jonatish'%}"><button class="btn btn-danger text-center" style="width: 100%;">Obyekt Qo'shish</button></a>
+        </div>
+        <br>
+        {% if auto %}
+        <table class="table table-hover table-bordered border-success">
+          <thead>
+            <tr>
+              <td class="text-center bg-dark text-light">Nomi</td>
+              <td class="text-center bg-dark text-light">Rangi</td>
+              <td class="text-center bg-dark text-light">Narxi</td>
+              <td class="text-center bg-dark text-light">O'zgartirish</td>
+              <td class="text-center bg-dark text-light">O'chirish</td>
+            </tr>
+          </thead>
+          <tbody>
+            {% for first in auto %}
+            <tr>
+              <td class="text-center">{{ first.nomi }}</td>
+              <td class="text-center">{{ first.rangi }}</td>
+              <td class="text-center">{{ first.narxi }}</td>
+              <td class="text-center"><a href="{% url 'edit_auto' first.id %}"><button class="btn btn-success">O'zgartirish</button></a></td>
+              <td class="text-center"><a href="{% url 'delate_auto' first.id %}"><button class="btn btn-danger">O'chirish</button></a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+         {% else %}
+         <table class="table table-hover table-bordered border-success">
+              <tbody>
+                <tr>
+                  <td class="text-center">Xech qanday ma'lumot yo'q</td>
+                </tr>
+              </tbody>
+            </table>
+         {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

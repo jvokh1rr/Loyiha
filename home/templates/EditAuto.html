@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  <div class="container">
+      <br>
+      <form method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <input type="text" name="nomi" value="{{ auto.nomi }}" class="form-control" placeholder="Nomi">
+          </div>
+          <div class="mb-3">
+            <input type="text" name="rangi" value="{{ auto.rangi }}" class="form-control" placeholder="Rangi">
+          </div>
+          <div class="mb-3">
+            <input type="text" name="narxi" value="{{ auto.narxi }}" class="form-control" placeholder="Narxi">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
